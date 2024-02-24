@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --primary:#FBA834;
+    --bg-color:#191919;
+    --font:#fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--bg-color);
+    font-family:'Poppins',sans-serif;
+    color: var(--font);
+}
+
+/* navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 7%;
+    background-color: rgb(1, 1, 1, 1);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navlogo{
+    font-size: 2rem;
+    font-weight: 999;
+    color: var(--font);
+}
+
+.navbar .navlogo span{
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a{
+    color:var(--font);
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+.navbar .navbar-nav a:hover{
+    color: var(--primary);
+}
+.navbar .navbar-extras a{
+    color: var(--font);
+    margin: 0 0.5rem;
+}
+.navbar .navbar-extras a:hover{
+    color: var(--primary);
+}
+
+#ham-menu{
+    display: none;
+}
+
+/* Main Content */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/servis2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg,rgba(1,1,3,1)8%,rgba(255,255,255,0)51%);
+    /* mix-blend-mode: difference; */
+}
+.hero .content{
+    padding: 1.4rem 6%;
+    max-width: 60rem;
+}
+.hero .content h1{
+    font-size: 3.5em;
+    color: var(--font);
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+.hero .content h1 span{
+    color: var(--primary);
+}
+.hero .content p{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 180;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* Content */
+.service-content{
+    padding: 8rem 7% 1.4rem;
+    text-align: center;
+}
+.service-content h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 2.3rem;
+}
+.service-content p{
+    margin-top: 1rem;
+}
+.service-content .gambar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    gap: 1rem;
+}
+.service-content .gambar img{
+    width: 550px;
+    height: 350px;
+}
+.service-content span{
+    color: var(--primary);
+}
+
+/* Footer */
+footer{
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+    
+}
+footer .social{
+    padding: 1rem 0;
+}
+footer .social a{
+    color: var(--font);
+    margin: 1rem;
+}
+footer .social a:hover,
+footer .link a:hover{
+    color: var(--bg-color);
+}
+footer .link {
+    margin-bottom: 1.4rem;
+}
+footer .link a{
+    color: var(--font);
+    padding: 0.7rem 1rem;
+}
+
+footer .cpyrt{
+    font-size: 0.8rem;
+}
+footer .cpyrt p{
+    color: var(--bg-color);
+    font-weight: bolder;
+}
+/* media que */
+
+/* Monitor */
+@media (max-width: 1366px){
+    html{
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 850px){
+    html{
+        font-size: 62%;
+        scroll-behavior: smooth;
+    }
+    #ham-menu{
+        display: inline-block;
+    }
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #0F0F0F;
+        width: 20rem;
+        height: 100vh;
+        transition: 0.3s;
+}
+
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    .navbar .navbar-nav a{
+        color: var(--font);
+        display: block;
+        margin: 1.4rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    .about .row{
+        flex-wrap: wrap;
+    }
+    .about .row .about-img img{
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+
+    }
+    .about .row .contentus {
+        padding: 0;
+    }
+    .about .row .contentus h3{
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .about .row .contentus p{
+        font-size: 1.6rem;
+    }
+    .service p{
+        font-size: 1.2rem;
+    }
+
+    .contact .row{
+        flex-wrap: wrap;
+    }
+    .contact .row .map{
+        height: 30rem;
+    }
+    .contact .row form{
+        padding-top: 0;
+    }
+}
+
+/* Hape */
+@media (max-width: 450px){
+    html{
+        font-size: 55%;
+    }
+}
